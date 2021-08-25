@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { View } from 'react-native';
 import FeatherIcon from 'react-native-vector-icons/Feather';
 
+import FloatingCart from '../../components/FloatingCart';
+
 import formatValue from '../../utils/formatValue';
 
 import {
@@ -21,6 +23,13 @@ export default function App() {
   const [products, setProducts] = useState([
     {
       id: '1',
+      title: 'Assinatura Trimestral',
+      image_url:
+        'https://res.cloudinary.com/robertosousa1/image/upload/v1594492578/dio/quarterly_subscription_yjolpc.png',
+      price: 150,
+    },
+    {
+      id: '2',
       title: 'Assinatura Trimestral',
       image_url:
         'https://res.cloudinary.com/robertosousa1/image/upload/v1594492578/dio/quarterly_subscription_yjolpc.png',
@@ -52,6 +61,7 @@ export default function App() {
           )}
         />
       </ProductContainer>
+      <FloatingCart />
     </Container>
   );
 }

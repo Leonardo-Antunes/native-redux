@@ -1,9 +1,11 @@
 import React from 'react';
 
 import { NavigationContainer } from '@react-navigation/native';
-import { createNavigator, createStackNavigator } from '@react-navigation/stack';
+import { createStackNavigator } from '@react-navigation/stack';
+import FeatherIcon from 'react-native-vector-icons/Feather';
 
 import Catalog from './pages/Catalog';
+import Cart from './pages/Cart';
 import Header from './components/Header';
 
 const Stack = createStackNavigator();
@@ -26,6 +28,21 @@ export default function Routes() {
             headerTransparent: true,
             headerTitle: () => <Header />,
             headerTitleAlign: 'center',
+          }}
+        />
+        <Stack.Screen
+          name="Cart"
+          component={Cart}
+          options={{
+            headerTransparent: true,
+            headerBackTitle: () => <Header />,
+            headerBackTitleVisible: false,
+            headerLeftContainerStyle: {
+              marginLeft: 20,
+            },
+            headerBackImage: () => (
+              <FeatherIcon name="chevron-left" size={24} color="#f3f9ff" />
+            ),
           }}
         />
       </Stack.Navigator>
