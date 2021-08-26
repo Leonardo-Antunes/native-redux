@@ -1,22 +1,20 @@
-import React from 'react';
-import LottieView from 'lottie-react-native';
+import styled from 'styled-components/native';
 
-import emptyCartAnimation from '../../../EmptyCartAnimation.json';
+export const Container = styled.View`
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+`;
 
-import { Container, EmptyCartContainer, EmptyCartText } from './styles';
+export const EmptyCartContainer = styled.View`
+  height: 150px;
+  width: 180px;
+`;
 
-export default function EmptyCart() {
-  return (
-    <Container>
-      <EmptyCartContainer>
-        <LottieView
-          source={emptyCartAnimation}
-          resizeMode="contain"
-          autoPlay
-          loop
-        />
-      </EmptyCartContainer>
-      <EmptyCartText>Seu carrinho está vazio</EmptyCartText>
-    </Container>
-  );
-}
+export const EmptyCartText = styled.Text`
+  color: #f3f9ff;
+  font-size: 28px;
+  margin-top: 5px;
+  line-height: 40px;
+  letter-spacing: 3px;
+`;
